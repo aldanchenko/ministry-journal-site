@@ -10,20 +10,19 @@
     <meta property="og:title" content="Ministry Journal — a simple service diary" />
     <meta property="og:description" content="Log time and notes. Fast. Private." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/og.png" />
+    <meta property="og:image" content="./og.png" />
     <meta property="og:url" content="https://your-domain.com" />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- PWA (optional) -->
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="./manifest.webmanifest" />
 
     <style>
         :root{
             --bg:#ffffff; --text:#0b0b0c; --muted:#6b7280; --card:#f7f7f8;
             --link:#2727ff; --border:#e6e6e9; --radius:14px;
             --shadow:0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.06);
-            --maxw:920px;
+            --maxw:1080px;
         }
         @media (prefers-color-scheme: dark){
             :root{
@@ -46,33 +45,66 @@
         .brand strong{font-weight:700}
         nav a{color:var(--muted); text-decoration:none; margin-left:16px}
         nav a:hover{color:var(--text)}
-        .hero{padding:32px 0 12px}
-        .hero h1{font-size:clamp(28px,4vw,40px); line-height:1.15; margin:0 0 14px}
+        .badge{font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid var(--border); background:var(--card); color:var(--muted)}
+        .hero{padding:10px 0 10px}
+        .hero h1{font-size:clamp(28px,4vw,40px); line-height:1.15; margin:8px 0 10px}
         .hero p{margin:0; color:var(--muted); font-size:18px}
-        .cta{display:flex; gap:12px; align-items:center; margin-top:22px; flex-wrap:wrap}
+
+        /* Two‑column feature section */
+        .showcase{
+            display:grid; grid-template-columns: 1fr 1fr; gap:28px;
+            align-items:start; margin-top:26px;
+        }
+        @media (max-width: 900px){ .showcase{ grid-template-columns: 1fr; } }
+
+        /* iPhone frame */
+        .iphone{
+            width:min(420px, 100%);
+            margin:auto;
+            aspect-ratio: 9/19.5;
+            border: 2px solid #000;           /* frame edge */
+            border-radius: 42px;
+            background: #000;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        @media (prefers-color-scheme: light){
+            .iphone{ border-color:#111; background:#111; }
+        }
+        .iphone .screen{
+            position:absolute; inset: 10px;
+            border-radius: 32px; overflow:hidden; background:#000;
+        }
+        .iphone .screen img{
+            width:100%; height:100%; object-fit:cover; display:block;
+        }
+        /* Notch */
+        .iphone::before{
+            content:""; position:absolute; top:6px; left:50%; transform:translateX(-50%);
+            width: 40%; height: 18px; background:#000; border-bottom-left-radius:12px; border-bottom-right-radius:12px;
+            height: 12px;
+        }
+        @media (prefers-color-scheme: light){
+            .iphone::before{ background:#111; }
+        }
+
+        /* Right column content */
+        .side h2{margin:0 0 10px; font-size:24px}
+        .card{padding:18px; border:1px solid var(--border); border-radius:16px; background:var(--card); margin-bottom:12px}
+        .muted{color:var(--muted)}
+
+        /* bottom CTA */
+        .cta{display:flex; gap:12px; align-items:center; margin-top:24px; flex-wrap:wrap; justify-content:center}
         .btn{
             display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; border:1px solid var(--border);
             background:var(--card); color:var(--text); text-decoration:none; box-shadow:var(--shadow)
         }
         .btn.primary{background:var(--text); color:var(--bg); border-color:transparent}
         .btn span.small{opacity:.7; font-size:13px}
-        .screens{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:28px 0 8px}
-        .shot{border:1px solid var(--border); border-radius:18px; overflow:hidden; background:var(--card); box-shadow:var(--shadow)}
-        .shot img{width:100%; height:auto; display:block}
-        .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:16px 0}
-        .card{padding:18px; border:1px solid var(--border); border-radius:16px; background:var(--card)}
-        .card h3{margin:0 0 6px; font-size:18px}
-        .muted{color:var(--muted)}
-        .section{padding:28px 0}
-        .faq details{border:1px solid var(--border); border-radius:12px; padding:14px 16px; background:var(--card)}
-        .faq details+details{margin-top:12px}
-        .faq summary{cursor:pointer; font-weight:600}
+
         footer{border-top:1px solid var(--border); margin-top:36px; padding-top:20px; color:var(--muted)}
         a{color:var(--link)}
-        @media (max-width:840px){ .screens{grid-template-columns:1fr 1fr} .grid{grid-template-columns:1fr} }
-        @media (max-width:560px){ header{flex-direction:column; align-items:flex-start} nav{display:flex; gap:14px; margin-top:8px} .screens{grid-template-columns:1fr} }
-        @media (prefers-reduced-motion:no-preference){ .btn{transition:transform .12s ease, opacity .12s ease} .btn:hover{transform:translateY(-1px)} }
-        .badge{font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid var(--border); background:var(--card); color:var(--muted)}
     </style>
 </head>
 <body>
@@ -85,7 +117,7 @@
         <nav aria-label="Navigation">
             <a href="#features">Features</a>
             <a href="#privacy">Privacy</a>
-            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
@@ -94,67 +126,62 @@
             <span class="badge">minimal · offline · private</span>
             <h1 id="title">A simple service diary</h1>
             <p>Log your time and notes in seconds. No clutter — just what matters.</p>
-            <div class="cta">
-                <a class="btn primary" href="#" aria-label="Download for iOS">
-                    <span>Download for iOS</span>
-                    <span class="small">TestFlight / App Store</span>
-                </a>
-                <a class="btn" href="#" aria-label="Download for Android">
-                    <span>Download for Android</span>
-                    <span class="small">APK / Play</span>
-                </a>
-                <a class="btn" href="mailto:hello@example.com?subject=Ministry%20Journal" aria-label="Contact us">Contact us</a>
-            </div>
-
-            <div class="screens" aria-label="App screenshots">
-                <figure class="shot"><img src="screens/1.png" alt="Log time screen" /></figure>
-                <figure class="shot"><img src="screens/2.png" alt="History screen" /></figure>
-                <figure class="shot"><img src="screens/3.png" alt="Reminders screen" /></figure>
-            </div>
         </section>
 
-        <section id="features" class="section" aria-labelledby="features-title">
-            <h2 id="features-title" style="margin:0 0 10px">What makes it easy</h2>
-            <div class="grid">
-                <article class="card">
-                    <h3>Instant entries</h3>
-                    <p class="muted">One screen — time, note, done. No sign‑ups or complex forms.</p>
-                </article>
-                <article class="card">
-                    <h3>Yearly stats</h3>
-                    <p class="muted">Service year (Sep&nbsp;1 → Aug&nbsp;31), history, and export when you need it.</p>
-                </article>
-                <article class="card">
-                    <h3>Gentle reminders</h3>
-                    <p class="muted">A soft nudge at 21:00 so you don’t forget.</p>
-                </article>
+        <section class="showcase" aria-label="App preview and features">
+            <!-- LEFT: single screenshot inside iPhone frame -->
+            <div class="phone-col">
+                <figure class="iphone" aria-label="iPhone preview">
+                    <div class="screen">
+                        <!-- put your screenshot at ./screens/1.png -->
+                        <img src="screens/1.png" alt="App screenshot: Log time screen" />
+                    </div>
+                </figure>
             </div>
+
+            <!-- RIGHT: features list -->
+            <aside class="side" id="features" aria-labelledby="features-title">
+                <h2 id="features-title">What makes it easy</h2>
+
+                <div class="card">
+                    <h3 style="margin:0 0 6px; font-size:18px">Instant entries</h3>
+                    <p class="muted" style="margin:0">One screen — time, note, done. No sign‑ups or complex forms.</p>
+                </div>
+
+                <div class="card">
+                    <h3 style="margin:0 0 6px; font-size:18px">Yearly stats</h3>
+                    <p class="muted" style="margin:0">Service year (Sep&nbsp;1 → Aug&nbsp;31), history, and export when you need it.</p>
+                </div>
+
+                <div class="card">
+                    <h3 style="margin:0 0 6px; font-size:18px">Gentle reminders</h3>
+                    <p class="muted" style="margin:0">A soft nudge at 21:00 so you don’t forget.</p>
+                </div>
+            </aside>
         </section>
 
-        <section id="privacy" class="section" aria-labelledby="privacy-title">
+        <!-- Bottom CTA after the screenshot -->
+        <section class="cta" aria-label="Download and contact" id="contact">
+            <a class="btn primary" href="#" aria-label="Download for iOS">
+                <span>Download for iOS</span>
+                <span class="small">TestFlight / App Store</span>
+            </a>
+            <a class="btn" href="#" aria-label="Download for Android">
+                <span>Download for Android</span>
+                <span class="small">APK / Play</span>
+            </a>
+            <a class="btn" href="mailto:hello@example.com?subject=Ministry%20Journal" aria-label="Contact us">Contact us</a>
+        </section>
+
+        <!-- Privacy block (сохранил коротким) -->
+        <section id="privacy" style="margin-top:22px" aria-labelledby="privacy-title">
             <h2 id="privacy-title" style="margin:0 0 10px">Privacy by default</h2>
             <div class="card">
-                <p class="muted">
+                <p class="muted" style="margin:0">
                     Your data lives on your device. No accounts, no trackers, no cloud. You’re in control.
                     When you export, files stay with you.
                 </p>
             </div>
-        </section>
-
-        <section id="faq" class="section faq" aria-labelledby="faq-title">
-            <h2 id="faq-title" style="margin:0 0 10px">FAQ</h2>
-            <details>
-                <summary>Does it work offline?</summary>
-                <p class="muted">Yes. Internet is only required to download the app and updates.</p>
-            </details>
-            <details>
-                <summary>How do I back up my data?</summary>
-                <p class="muted">Use the built‑in export and save the file wherever you like (iCloud/Files/Drive).</p>
-            </details>
-            <details>
-                <summary>Is there dark mode?</summary>
-                <p class="muted">Yes — it automatically follows your system theme.</p>
-            </details>
         </section>
     </main>
 
@@ -163,6 +190,7 @@
         <div>Contact: <a href="mailto:hello@example.com">hello@example.com</a></div>
     </footer>
 </div>
+
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
