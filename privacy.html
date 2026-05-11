@@ -1,29 +1,204 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Privacy Policy — Ministry Time</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Privacy Policy — Ministry Time</title>
+  <meta name="description" content="Privacy Policy for Ministry Time — a service diary app by Alex Danchenko.">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #1d1d1f;
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #0071e3; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      background: rgba(0,0,0,0.72);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-brand {
+      font-size: 16px;
+      font-weight: 600;
+      color: #f5f5f7;
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    .nav-back {
+      font-size: 14px;
+      color: rgba(245,245,247,0.7);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: color .2s;
+    }
+    .nav-back:hover { color: #f5f5f7; text-decoration: none; }
+
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 64px 24px 100px;
+    }
+
+    .page-title {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: #1d1d1f;
+      margin-bottom: 10px;
+    }
+    .last-updated {
+      font-size: 15px;
+      color: #6e6e73;
+      margin-bottom: 48px;
+    }
+
+    .intro {
+      font-size: 19px;
+      color: #3a3a3c;
+      line-height: 1.65;
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid #e5e5ea;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #1d1d1f;
+      margin: 40px 0 12px;
+    }
+    p { color: #3a3a3c; margin-bottom: 16px; }
+    ul, ol {
+      padding-left: 22px;
+      color: #3a3a3c;
+      margin-bottom: 16px;
+    }
+    li { margin-bottom: 6px; }
+    strong { color: #1d1d1f; font-weight: 600; }
+
+    .highlight-box {
+      background: #f2f9ff;
+      border: 1px solid #cce5ff;
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .highlight-box p { margin: 0; color: #1d3d5c; }
+
+    footer {
+      border-top: 1px solid #e5e5ea;
+      margin-top: 64px;
+      padding-top: 24px;
+      font-size: 14px;
+      color: #6e6e73;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: space-between;
+    }
+    footer a { color: #6e6e73; }
+    footer a:hover { color: #1d1d1f; }
+  </style>
 </head>
 <body>
-<h1>Privacy Policy</h1>
-<p>Last updated: August 31, 2025</p>
 
-<p>Ministry Time is a minimal diary app designed to help you keep track of your ministry time and notes.</p>
+<nav class="nav">
+  <a class="nav-brand" href="index.html">Ministry Time</a>
+  <a class="nav-back" href="index.html">
+    <svg width="7" height="12" viewBox="0 0 7 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="6 1 1 6 6 11"/>
+    </svg>
+    Back
+  </a>
+</nav>
 
-<h2>Data collection</h2>
-<p>The app does not collect, transmit, or store any personal information on external servers.
-    All data (entries, notes, statistics) remain only on your device.</p>
+<div class="wrap">
+  <h1 class="page-title">Privacy Policy</h1>
+  <p class="last-updated">Last updated: May 11, 2026</p>
 
-<h2>Permissions</h2>
-<ul>
-    <li><strong>Notifications:</strong> Used only for daily reminders. You can disable them at any time in system settings.</li>
-</ul>
+  <p class="intro">
+    Ministry Time is a personal service diary app. This Privacy Policy explains what information the app handles,
+    how it is stored, and your rights as a user. We believe privacy is a fundamental right — and this app
+    was built around that principle from day one.
+  </p>
 
-<h2>Third-party services</h2>
-<p>The app does not use analytics, ads, or tracking tools.</p>
+  <div class="highlight-box">
+    <p><strong>The short version:</strong> Ministry Time does not collect, transmit, or share any personal data.
+    Everything you enter stays on your device. We have no servers, no accounts, no analytics.</p>
+  </div>
 
-<h2>Contact</h2>
-<p>If you have any questions about this Privacy Policy, contact us at:
-    <a href="mailto:hyper-ionised1v@icloud.com">hyper-ionised1v@icloud.com</a></p>
+  <h2>1. Information We Collect</h2>
+  <p>Ministry Time does <strong>not</strong> collect any personal information. The app does not require you to create an account or provide any identifying details.</p>
+  <p>All data you enter — including time entries, notes, Bible study contacts, goals, and settings — is stored exclusively on your local device using the device's built-in storage. This data is never transmitted to us or any third party.</p>
+
+  <h2>2. Data Storage</h2>
+  <p>Your data is stored locally on your device using standard platform storage (SQLite / shared preferences). On iOS, data may be included in your iCloud backup if you have iCloud Backup enabled in your device settings — this is controlled entirely by you and Apple, not by Ministry Time.</p>
+  <p>On Android, data may be included in Google Drive backup if you have enabled automatic backup in your device settings. Again, this is managed by Google's backup service, not by us.</p>
+
+  <h2>3. Permissions Used</h2>
+  <ul>
+    <li>
+      <strong>Notifications</strong> — used to send optional daily reminders at a time you choose.
+      You can disable this permission at any time in your device's system settings.
+      No notification content is sent to or seen by us.
+    </li>
+  </ul>
+  <p>No other device permissions (camera, microphone, location, contacts, etc.) are requested or used.</p>
+
+  <h2>4. Data Sharing</h2>
+  <p>We do not share your data with anyone. Ministry Time does not integrate with any third-party analytics, advertising, or tracking services. There are no SDKs that phone home with usage data.</p>
+
+  <h2>5. Data Export</h2>
+  <p>Ministry Time allows you to export your entries as a report file (CSV or similar format). When you use this feature, the exported file is created on your device and shared only through the standard system sharing sheet — you choose where it goes. We never receive a copy.</p>
+
+  <h2>6. Data Retention and Deletion</h2>
+  <p>Since all data is stored locally on your device, you are in full control of its retention. You can delete individual entries within the app at any time.</p>
+  <p>To delete all data, you can uninstall the app. This will remove all locally stored data from your device. If you have iCloud or Google Drive backup enabled, you may also need to remove the app's backup from those services manually.</p>
+
+  <h2>7. Children's Privacy</h2>
+  <p>Ministry Time does not knowingly collect any information from anyone, including children under the age of 13. Because no data is collected at all, the app is safe for users of all ages.</p>
+
+  <h2>8. Security</h2>
+  <p>Because Ministry Time operates entirely offline and stores data only on your device, the security of your data depends on your device's own security (lock screen, encryption, etc.). We encourage all users to keep their devices protected with a passcode or biometric lock.</p>
+
+  <h2>9. Changes to This Policy</h2>
+  <p>If we ever make material changes to this Privacy Policy, we will update the "Last updated" date at the top of this page and, where appropriate, notify users through the app. We encourage you to review this page periodically.</p>
+
+  <h2>10. Contact</h2>
+  <p>If you have any questions about this Privacy Policy or how the app handles your data, please contact:</p>
+  <p>
+    <strong>Alex Danchenko</strong><br>
+    <a href="mailto:hyper-ionised1v@icloud.com">hyper-ionised1v@icloud.com</a>
+  </p>
+
+  <footer>
+    <span>© <span id="y"></span> Ministry Time · Made by Alex Danchenko</span>
+    <a href="index.html">← Back to main page</a>
+  </footer>
+</div>
+
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
