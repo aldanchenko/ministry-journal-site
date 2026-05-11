@@ -145,8 +145,7 @@
   </p>
 
   <div class="highlight-box">
-    <p><strong>The short version:</strong> Ministry Time does not collect, transmit, or share any personal data.
-    Everything you enter stays on your device. We have no servers, no accounts, no analytics.</p>
+    <p><strong>The short version:</strong> Your diary data (time entries, notes, goals) stays entirely on your device and is never transmitted to us. The only external service used is Firebase (Google), and only for the optional Feature Requests screen — not for core app functionality.</p>
   </div>
 
   <h2>1. Information We Collect</h2>
@@ -167,26 +166,40 @@
   </ul>
   <p>No other device permissions (camera, microphone, location, contacts, etc.) are requested or used.</p>
 
-  <h2>4. Data Sharing</h2>
-  <p>We do not share your data with anyone. Ministry Time does not integrate with any third-party analytics, advertising, or tracking services. There are no SDKs that phone home with usage data.</p>
+  <h2>4. Feature Requests (Optional)</h2>
+  <p>The app includes an optional <strong>Feature Requests</strong> section where you can view, vote on, and submit ideas for future improvements. This feature uses third-party services provided by Google:</p>
+  <ul>
+    <li><strong>Firebase Authentication</strong> — signs you in anonymously to identify your votes. No name, email, or password is required. An anonymous, randomly generated ID is created and used solely to prevent duplicate votes.</li>
+    <li><strong>Cloud Firestore</strong> — stores the list of feature requests and vote counts on Google's servers.</li>
+  </ul>
+  <p>If you choose to <em>submit</em> a feature request, you may optionally provide an email address so we can follow up. This email is stored in Firestore and is never shared with third parties or used for marketing.</p>
+  <p>If you do not use the Feature Requests section, none of the above applies — Firebase is only initialized when you open that screen.</p>
+  <p>Firebase is operated by Google LLC. For details on how Google handles data, see the
+    <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy and Security page</a> and
+    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.
+  </p>
 
-  <h2>5. Data Export</h2>
+  <h2>5. Data Sharing</h2>
+  <p>We do not sell, rent, or share your personal data with any third parties for advertising or marketing purposes. The only external service used is Firebase (Google), solely for the optional Feature Requests feature described above. No analytics, ad networks, or tracking tools are integrated.</p>
+
+  <h2>6. Data Export</h2>
   <p>Ministry Time allows you to export your entries as a report file (CSV or similar format). When you use this feature, the exported file is created on your device and shared only through the standard system sharing sheet — you choose where it goes. We never receive a copy.</p>
 
-  <h2>6. Data Retention and Deletion</h2>
-  <p>Since all data is stored locally on your device, you are in full control of its retention. You can delete individual entries within the app at any time.</p>
-  <p>To delete all data, you can uninstall the app. This will remove all locally stored data from your device. If you have iCloud or Google Drive backup enabled, you may also need to remove the app's backup from those services manually.</p>
+  <h2>7. Data Retention and Deletion</h2>
+  <p>Since all diary data is stored locally on your device, you are in full control of its retention. You can delete individual entries within the app at any time.</p>
+  <p>To delete all local data, uninstall the app. If you have iCloud or Google Drive backup enabled, you may also need to remove the app's backup from those services manually.</p>
+  <p>If you submitted a feature request and would like your email or entry removed from Firestore, contact us at <a href="mailto:hyper-ionised1v@icloud.com">hyper-ionised1v@icloud.com</a> and we will delete it promptly.</p>
 
-  <h2>7. Children's Privacy</h2>
-  <p>Ministry Time does not knowingly collect any information from anyone, including children under the age of 13. Because no data is collected at all, the app is safe for users of all ages.</p>
+  <h2>8. Children's Privacy</h2>
+  <p>Ministry Time is not directed at children under the age of 13. The optional Feature Requests section uses anonymous Firebase Authentication; no name, age, or other personal information is required. We do not knowingly collect personal data from children.</p>
 
-  <h2>8. Security</h2>
-  <p>Because Ministry Time operates entirely offline and stores data only on your device, the security of your data depends on your device's own security (lock screen, encryption, etc.). We encourage all users to keep their devices protected with a passcode or biometric lock.</p>
+  <h2>9. Security</h2>
+  <p>Your diary data is stored locally and protected by your device's own security (lock screen, encryption). Data transmitted to Firebase via the Feature Requests feature is sent over encrypted HTTPS connections and stored on Google's infrastructure, which maintains its own security certifications.</p>
 
-  <h2>9. Changes to This Policy</h2>
+  <h2>11. Changes to This Policy</h2>
   <p>If we ever make material changes to this Privacy Policy, we will update the "Last updated" date at the top of this page and, where appropriate, notify users through the app. We encourage you to review this page periodically.</p>
 
-  <h2>10. Contact</h2>
+  <h2>12. Contact</h2>
   <p>If you have any questions about this Privacy Policy or how the app handles your data, please contact:</p>
   <p>
     <strong>Alex Danchenko</strong><br>
